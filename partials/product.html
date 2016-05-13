@@ -1,4 +1,42 @@
 <div class="product-div">
+  <div class="product-details-add">
+    <div class="product-out-stock" ng-show="!product.inStock">
+      Out of Stock
+    </div>
+    <div ng-show="product.inStock">
+      <form class="add-form">
+        <div class="add-form-element">
+          <select class="form-control quantity-selector">
+            <option class="quantity-selector">1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+        <div class="add-form-element">
+          <button class="btn-block btn btn-primary add-button" type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+    <p><span class="title">Caffeine Scale:</span> {{product.caffeineScale}}</p>
+    <p>
+      <span class="title">Rating:</span>
+      {{product.rating}}
+      <span ng-repeat="i in ctrl.getStars(product.rating)">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </span>
+      <span ng-repeat="i in ctrl.getNoStars(product.rating)">
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+      </span>
+    </p>
+    <p><span class="title">Ingredients:</span> {{product.ingredients}}</p>
+  </div>
   <div class="product-image-container">
     <img class="product-image" src="{{product.imageUrl}}">
   </div>

@@ -3,6 +3,17 @@ html, body {
   font-size: 15px;
 }
 
+.search-bar {
+  width: 200px;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.navbar {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 /*SHOPPING STYLES*/
 
 .product-container {
@@ -43,7 +54,7 @@ html, body {
 }
 
 .product-image-container::after {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   content: '';
   position: absolute;
   top: 0;
@@ -56,4 +67,33 @@ html, body {
 
 .product-div:hover > .product-image-container::after {
   visibility: visible;
+}
+
+.product-out-stock {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.product-details-add {
+  position: absolute;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.product-div:hover > .product-details-add {
+  visibility: visible;
+  padding-right: 34px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.add-form {
+  margin-bottom: 20px;
+}
+
+.add-form-element {
+  width: 45%;
+  display: inline-block;
 }
