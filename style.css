@@ -16,7 +16,11 @@ html, body {
   /*display: flex;
   align-items: center;
   flex-direction: column;*/
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
+}
+
+.product-info-container {
+  margin-top: 14px;
 }
 
 .product-image {
@@ -31,4 +35,25 @@ html, body {
 .product-price {
   font-size: 18px;
   color: #666;
+  margin-bottom: 0;
+}
+
+.product-image-container {
+  position: relative;
+}
+
+.product-image-container::after {
+  background-color: rgba(255, 255, 255, 0.8);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.product-div:hover > .product-image-container::after {
+  visibility: visible;
 }
