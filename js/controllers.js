@@ -4,7 +4,7 @@ angular
     .controller('CheckoutController', CheckoutController)
 
 ShopController.$inject = ['$route', 'StoreServices'];
-CheckoutConroller.$inject = ['$route', 'StoreServices'];
+CheckoutController.$inject = ['$route', 'StoreServices'];
 
 function ShopController($route, StoreServices) {
 
