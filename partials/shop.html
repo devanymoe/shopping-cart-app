@@ -18,4 +18,11 @@
       <button type="button" class="btn btn-block btn-primary">Checkout</button>
     </div>
   </div>
+  <div class="row">
+    <div class="product-container" ng-repeat="product in ctrl.allProducts">
+      <div class="col-md-3">
+        <dm-product product-data="product"></dm-product>
+      </div>
+    </div>
+  </div>
 </div>
