@@ -20,18 +20,17 @@
           </select>
         </div>
         <div class="add-form-element">
-          <button class="btn-block btn btn-primary add-button" type="submit">Add</button>
+          <button class="btn-block btn add-button" type="submit">Add</button>
         </div>
       </form>
     </div>
     <p><span class="title">Caffeine Scale:</span> {{product.caffeineScale}}</p>
     <p>
       <span class="title">Rating:</span>
-      {{product.rating}}
-      <span ng-repeat="i in ctrl.getStars(product.rating)">
+      <span ng-repeat="i in ctrl.getStars(product.rating) track by $index">
         <i class="fa fa-star" aria-hidden="true"></i>
       </span>
-      <span ng-repeat="i in ctrl.getNoStars(product.rating)">
+      <span ng-repeat="i in ctrl.getNoStars(product.rating) track by $index">
         <i class="fa fa-star-o" aria-hidden="true"></i>
       </span>
     </p>

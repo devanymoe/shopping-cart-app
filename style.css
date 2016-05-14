@@ -9,9 +9,22 @@ html, body {
   margin-right: 10px;
 }
 
+.search-bar input {
+  border: 1px solid #fff;
+}
+
 .navbar {
   padding-left: 30px;
   padding-right: 30px;
+  background-color: #B05A4A;
+}
+
+.navbar .container-fluid a, .navbar .container-fluid li a {
+  color: #fff;
+}
+
+.navbar .container-fluid a:hover, .navbar .container-fluid li a:hover {
+  color: #6D382E;
 }
 
 /*SHOPPING STYLES*/
@@ -96,4 +109,14 @@ html, body {
 .add-form-element {
   width: 45%;
   display: inline-block;
+}
+
+button {
+  background-color: #B05A4A;
+  color: #fff;
+}
+
+.product-div button:hover {
+  background-color: #964C3E;
+  color: #fff;
 }

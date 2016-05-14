@@ -4,6 +4,19 @@ angular
 
 function StoreServices() {
   return {
+    returnCategories: function(products) {
+      var allProducts = products;
+      var categories = [];
+
+      for (var i = 0; i < allProducts.length; i++) {
+        for (var x = 0; x < allProducts[i].categories.length; x++) {
+          categories.push(allProducts[i].categories[x]);
+        }
+        if (i === allProducts.length - 1) {
+          return Array.from(new Set(categories));
+        }
+      }
+    },
 
     returnProducts: function() {
       return [
