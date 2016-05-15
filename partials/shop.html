@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-3">
       <select class="form-control" ng-model="ctrl.categoryFilter">
-        <option disabled selected value="">Filter by Category</option>
-        <option ng-repeat="category in ctrl.allCategories" value="{{category}}">{{category}}</option>
+        <option selected value="">Filter by Category</option>
+        <option ng-repeat="category in ctrl.allCategories | orderBy: category" value="{{category}}">{{category}}</option>
       </select>
     </div>
     <div class="col-md-2">
@@ -14,7 +14,7 @@
     <div class="col-md-7"></div>
   </div>
   <div class="row">
-    <div class="product-container" ng-repeat="product in ctrl.allProducts | filter: {name: ctrl.service.searchTerm, categories: ctrl.categoryFilter}">
+    <div class="product-container" ng-repeat="product in ctrl.allProducts | filter: {name: ctrl.service.searchTerm, categories: ctrl.categoryFilter} | orderBy: 'name'">
       <div class="col-md-3">
         <dm-product product-data="product"></dm-product>
       </div>

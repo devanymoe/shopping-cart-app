@@ -11,6 +11,11 @@ html, body {
 
 .search-bar input {
   border: 1px solid #fff;
+  background-image: url('images/search.png');
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 4px;
+  padding-left: 26px;
 }
 
 .navbar {
@@ -30,7 +35,7 @@ html, body {
 /*SHOPPING STYLES*/
 
 .product-container {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .product-div {
@@ -76,10 +81,14 @@ html, body {
   width: 100%;
   height: 100%;
   visibility: hidden;
+  opacity: 0;
+  transition:visibility 0s linear 125ms, opacity 125ms ease;
 }
 
 .product-div:hover > .product-image-container::after {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .product-out-stock {
@@ -91,11 +100,15 @@ html, body {
   position: absolute;
   visibility: hidden;
   z-index: 100;
+  padding-right: 34px;
+  opacity: 0;
+  transition:visibility 0s linear 125ms, opacity 125ms ease;
 }
 
 .product-div:hover > .product-details-add {
   visibility: visible;
-  padding-right: 34px;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .title {
@@ -119,4 +132,8 @@ button {
 .product-div button:hover {
   background-color: #964C3E;
   color: #fff;
+}
+
+.no-star {
+  color: #999;
 }
