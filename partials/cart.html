@@ -3,6 +3,7 @@
   <div class="col-md-4 col-sm-12 cart cartSlide">
     <div class="cart-items">
       <div class="row"><h4>Checkout</h4></row>
+      <div ng-show="!ctrl.cart[0]">Your cart is empty.</div>
       <div class="row cart-item" ng-repeat="item in ctrl.cart">
         <div class="row">
           <div class="col-sm-2 arrow">
@@ -35,7 +36,7 @@
         <p>Total: {{ctrl.service.getTotal() | currency:'$':2}}</p>
       </div>
       <div class="row">
-        <button type="button" class="btn btn-block">Place Order</button>
+        <button type="button" ng-click="ctrl.service.clearCart()" class="btn btn-block">Place Order</button>
       </div>
     </div>
   </div>

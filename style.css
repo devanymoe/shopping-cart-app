@@ -136,12 +136,12 @@ button {
   color: #fff;
 }
 
-.product-div button:hover {
+.product-div button:hover, .cart-container .cart-items button:hover {
   background-color: #964C3E;
   color: #fff;
 }
 
-.product-div button:focus, .product-div button:active {
+.product-div button:focus, .product-div button:active, .cart-container .cart-items button:active, .cart-container .cart-items button:focus {
   background-color: #B05A4A;
   color: #fff;
   outline: 0px;
@@ -173,6 +173,10 @@ button {
   border-bottom: 1px solid #eee;
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+.cart-items {
+  /*overflow: scroll;*/
 }
 
 .noScroll {

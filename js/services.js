@@ -46,6 +46,7 @@ function StoreServices() {
     },
 
     clearCart: function() {
+      cartOpen = false;
       cart = [];
     },
 
