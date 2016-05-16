@@ -1,17 +1,41 @@
 <div ng-show="ctrl.service.getCartStatus()" class="cart-container">
   <div class="col-md-8"></div>
-  <div class="col-md-4 cart cartSlide">
+  <div class="col-md-4 col-sm-12 cart cartSlide">
     <div class="cart-items">
-      <div class="row" ng-repeat="item in ctrl.cart">
-        <div class="col-md-1">
-          {{item.quantity}}
+      <div class="row"><h4>Checkout</h4></row>
+      <div class="row cart-item" ng-repeat="item in ctrl.cart">
+        <div class="row">
+          <div class="col-sm-2 arrow">
+            <span class="edit-item" ng-click="ctrl.service.increase(item)">&#9650;</span>
+          </div>
+          <div class="col-sm-8"></div>
+          <div class="col-sm-2 remove"><span class="edit-item" ng-click="ctrl.service.deleteItem(item)"><img src="../images/x.png"></span></div>
         </div>
-        <div class="col-md-8">
-          {{item.name}}
+        <div class="row">
+          <div class="col-sm-2 quantity">
+            {{item.quantity}}
+          </div>
+          <div class="col-sm-7">
+            {{item.name}}
+          </div>
+          <div class="col-sm-3">
+            {{item.price / 100 * item.quantity | currency:'$':2}}
+          </div>
         </div>
-        <div class="col-md-3">
-          {{item.price / 100 * item.quantity | currency:'$':2}}
+        <div class="row">
+          <div class="col-sm-2 arrow down">
+            <span class="edit-item" ng-click="ctrl.service.decrease(item)">&#9660;</span>
+          </div>
+          <div class="col-sm-10"></div>
         </div>
+      </div>
+    </div>
+    <div class="row checkout">
+      <div class="row">
+        <p>Total: {{ctrl.service.getTotal() | currency:'$':2}}</p>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-block">Place Order</button>
       </div>
     </div>
   </div>

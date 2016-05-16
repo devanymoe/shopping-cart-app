@@ -5,8 +5,32 @@ angular
 function StoreServices() {
   var cart = [];
   var cartOpen = false;
+  var total = 0;
 
   return {
+
+    deleteItem: function(item) {
+      var index = cart.indexOf(item);
+
+      total = total - (parseInt(item.quantity) * parseInt(item.price) / 100);
+      cart.splice(index, 1);
+    },
+
+    increase: function(item) {
+      total = total + (parseInt(item.price) / 100);
+      item.quantity = parseInt(item.quantity) + 1;
+    },
+
+    decrease: function(item) {
+      if (item.quantity > 1) {
+        total = total - (parseInt(item.price) / 100);
+        item.quantity = parseInt(item.quantity) - 1;
+      }
+    },
+
+    getTotal: function() {
+      return total;
+    },
 
     getCartStatus: function() {
       return cartOpen;
@@ -30,9 +54,17 @@ function StoreServices() {
     },
 
     addToCart: function(product) {
+      var newTotal = 0;
+
       if (cart.indexOf(product) === -1) {
         cart.push(product);
       }
+
+      for (var i = 0; i < cart.length; i++) {
+        newTotal = newTotal + (parseInt(cart[i].quantity) * parseInt(cart[i].price) / 100);
+      }
+
+      total = newTotal;
     },
 
     returnCategories: function(products) {

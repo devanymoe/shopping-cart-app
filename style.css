@@ -169,6 +169,12 @@ button {
   height: 100%;
 }
 
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .noScroll {
   overflow: hidden;
 }
@@ -179,7 +185,51 @@ button {
   bottom: 0;
   height: 100vh;
   border-left: 1px solid #1c1c1c;
-  padding: 100px 50px 50px 50px;
+  padding: 60px 50px 50px 50px;
+  position: relative;
+}
+
+.edit-item {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.cart-item:hover .edit-item {
+  visibility: visible;
+}
+
+.edit-item img {
+  width: 12px;
+  margin-top: -24px;
+  margin-right: 8px;
+}
+
+.remove {
+  text-align: right;
+}
+
+.arrow {
+  font-size: 10px;
+  text-align: center;
+  color: #AAAAAB;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.down {
+  margin-top: 10px;
+}
+
+.quantity {
+  text-align: center;
+}
+
+.checkout {
+  bottom: 30px;
+  position: absolute;
 }
 
 .cartSlide.ng-animate {
