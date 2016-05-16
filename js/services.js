@@ -3,7 +3,38 @@ angular
   .factory('StoreServices', StoreServices)
 
 function StoreServices() {
+  var cart = [];
+  var cartOpen = false;
+
   return {
+
+    getCartStatus: function() {
+      return cartOpen;
+    },
+
+    toggleCart: function() {
+      if (cartOpen === false) {
+        cartOpen = true;
+      }
+      else {
+        cartOpen = false;
+      }
+    },
+
+    clearCart: function() {
+      cart = [];
+    },
+
+    getCart: function() {
+      return cart;
+    },
+
+    addToCart: function(product) {
+      if (cart.indexOf(product) === -1) {
+        cart.push(product);
+      }
+    },
+
     returnCategories: function(products) {
       var allProducts = products;
       var categories = [];

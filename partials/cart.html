@@ -1,0 +1,18 @@
+<div ng-show="ctrl.service.getCartStatus()" class="cart-container">
+  <div class="col-md-8"></div>
+  <div class="col-md-4 cart cartSlide">
+    <div class="cart-items">
+      <div class="row" ng-repeat="item in ctrl.cart">
+        <div class="col-md-1">
+          {{item.quantity}}
+        </div>
+        <div class="col-md-8">
+          {{item.name}}
+        </div>
+        <div class="col-md-3">
+          {{item.price / 100 * item.quantity | currency:'$':2}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 angular
-  .module('myApp', ['ngRoute'])
+  .module('myApp', ['ngRoute', 'ngAnimate'])
   .config(routeHandler)
 
 routeHandler.$inject = ['$routeProvider', '$locationProvider'];

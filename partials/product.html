@@ -4,9 +4,9 @@
       Out of Stock
     </div>
     <div ng-show="product.inStock">
-      <form class="add-form">
+      <form class="add-form" ng-submit="ctrl.addToCart(product)">
         <div class="add-form-element">
-          <select class="form-control quantity-selector">
+          <select class="form-control quantity-selector" ng-model="ctrl.quantity">
             <option class="quantity-selector">1</option>
             <option>2</option>
             <option>3</option>

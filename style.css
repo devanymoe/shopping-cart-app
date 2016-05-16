@@ -22,6 +22,7 @@ html, body {
   padding-left: 30px;
   padding-right: 30px;
   background-color: #B05A4A;
+  border: none;
 }
 
 .navbar .container-fluid a, .navbar .container-fluid li a {
@@ -30,6 +31,12 @@ html, body {
 
 .navbar .container-fluid a:hover, .navbar .container-fluid li a:hover {
   color: #6D382E;
+  outline: 0px;
+}
+
+.navbar .container-fluid a:active, .navbar .container-fluid li a:active, .navbar .container-fluid a:focus, .navbar .container-fluid li a:focus {
+  color: #fff;
+  outline: 0px;
 }
 
 /*SHOPPING STYLES*/
@@ -134,6 +141,59 @@ button {
   color: #fff;
 }
 
+.product-div button:focus, .product-div button:active {
+  background-color: #B05A4A;
+  color: #fff;
+  outline: 0px;
+}
+
 .no-star {
   color: #999;
+}
+
+/*CHECKOUT STYLES*/
+
+.cart-container {
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 5;
+  overflow: auto;
+  transition: all 0.5s;
+}
+
+.cart-content {
+  overflow: scroll;
+  height: 100%;
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.cart {
+  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  border-left: 1px solid #1c1c1c;
+  padding: 100px 50px 50px 50px;
+}
+
+.cartSlide.ng-animate {
+  transition:0.5s linear all;
+}
+.cartSlide.ng-add {
+  transform: translateX(0%);
+}
+.cartSlide.ng-add.ng-add-active {
+  transform: translateX(100%);
+}
+.cartSlide.ng-remove {
+  transform: translateX(100%);
+}
+.cartSlide.ng-remove.ng-remove-active {
+  transform: translateX(0%);
 }

@@ -29,4 +29,9 @@ function CheckoutController($route, StoreServices) {
 
 function NavController($route, StoreServices) {
   this.service = StoreServices;
+  this.cart = this.service.getCart();
+
+  this.toggleCart = function() {
+    this.service.toggleCart();
+  }
 }
