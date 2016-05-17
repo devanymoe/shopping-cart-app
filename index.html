@@ -26,7 +26,7 @@
             <li class="search-bar"><input type="text" class="form-control search" placeholder="Search products by name" ng-model="ctrl.service.searchTerm"></li>
             <li><a href="/">About</a></li>
             <li><a href="/">Contact</a></li>
-            <li><a href="/" ng-click="ctrl.toggleCart()">Cart <span ng-show="ctrl.cart.length > 0">({{ctrl.cart.length}})</span></a></li>
+            <li><a href="/" ng-click="ctrl.toggleCart()">Cart <span ng-show="ctrl.cart.length > 0">({{ctrl.service.getCart().length}})</span></a></li>
           </ul>
         </div>
       </div>

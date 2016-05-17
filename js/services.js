@@ -48,6 +48,7 @@ function StoreServices() {
     clearCart: function() {
       cartOpen = false;
       cart = [];
+      total = 0;
     },
 
     getCart: function() {

@@ -191,6 +191,7 @@ button {
   border-left: 1px solid #1c1c1c;
   padding: 60px 50px 50px 50px;
   position: relative;
+  overflow: auto;
 }
 
 .edit-item {
@@ -231,8 +232,17 @@ button {
   text-align: center;
 }
 
+.total {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .checkout {
-  bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  left: 50px;
+  right: 50px;
   position: absolute;
 }
 

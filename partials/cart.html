@@ -3,8 +3,8 @@
   <div class="col-md-4 col-sm-12 cart cartSlide">
     <div class="cart-items">
       <div class="row"><h4>Checkout</h4></row>
-      <div ng-show="!ctrl.cart[0]">Your cart is empty.</div>
-      <div class="row cart-item" ng-repeat="item in ctrl.cart">
+      <div ng-show="!ctrl.service.getCart().length">Your cart is empty.</div>
+      <div class="row cart-item" ng-repeat="item in ctrl.service.getCart()">
         <div class="row">
           <div class="col-sm-2 arrow">
             <span class="edit-item" ng-click="ctrl.service.increase(item)">&#9650;</span>
@@ -31,8 +31,8 @@
         </div>
       </div>
     </div>
-    <div class="row checkout">
-      <div class="row">
+    <div class="checkout">
+      <div class="row total">
         <p>Total: {{ctrl.service.getTotal() | currency:'$':2}}</p>
       </div>
       <div class="row">
