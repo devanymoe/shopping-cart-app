@@ -1,11 +1,9 @@
 angular
   .module('myApp')
     .controller('ShopController', ShopController)
-    .controller('CheckoutController', CheckoutController)
     .controller('NavController', NavController)
 
 ShopController.$inject = ['$route', 'StoreServices'];
-CheckoutController.$inject = ['$route', 'StoreServices'];
 NavController.$inject = ['$route', 'StoreServices'];
 
 function ShopController($route, StoreServices) {
@@ -21,10 +19,6 @@ function ShopController($route, StoreServices) {
   this.getNoStars = function(num) {
     return new Array(5 - num);
   }
-}
-
-function CheckoutController($route, StoreServices) {
-
 }
 
 function NavController($route, StoreServices) {

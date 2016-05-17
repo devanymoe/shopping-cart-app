@@ -40,9 +40,6 @@ function dmProduct() {
 function dmCart() {
   return {
     templateUrl: '../partials/cart.html',
-    // scope: {
-    //   product: '=productData'
-    // },
     controller: function($scope, StoreServices) {
       this.service = StoreServices;
       this.cart = this.service.getCart();

@@ -10,10 +10,6 @@ function routeHandler($routeProvider, $locationProvider) {
       templateUrl: 'partials/shop.html',
       controller: 'ShopController as ctrl'
     })
-    .when('/checkout', {
-      templateUrl: 'partials/checkout.html',
-      controller: 'CheckoutController as ctrl'
-    })
     .otherwise({
       templateUrl: 'partials/shop.html',
       controller: 'ShopController as ctrl'

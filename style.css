@@ -161,7 +161,7 @@ button {
   position: fixed;
   z-index: 5;
   overflow: auto;
-  transition: all 0.5s;
+  transition: all 250ms ease-in-out;
 }
 
 .cart-content {
@@ -246,18 +246,35 @@ button {
   position: absolute;
 }
 
-.cartSlide.ng-animate {
-  transition:0.5s linear all;
+.ng-animate .cartSlide {
+  transition: 250ms ease-in-out all;
 }
-.cartSlide.ng-add {
+.ng-hide-add .cartSlide {
   transform: translateX(0%);
 }
-.cartSlide.ng-add.ng-add-active {
+.ng-hide-add.ng-hide-add-active .cartSlide {
   transform: translateX(100%);
 }
-.cartSlide.ng-remove {
+.ng-hide-remove .cartSlide {
   transform: translateX(100%);
 }
-.cartSlide.ng-remove.ng-remove-active {
+.ng-hide-remove.ng-hide-remove-active .cartSlide {
   transform: translateX(0%);
+}
+
+.ng-animate.cart-container {
+  transition: 250ms ease-in-out all;
+  background-color: rgba(0,0,0,0);
+}
+.ng-hide-add.cart-container {
+  background-color: rgba(0,0,0,0.6);
+}
+.ng-hide-add.ng-hide-add-active.cart-container {
+  background-color: rgba(0,0,0,0);
+}
+.ng-hide-remove .cart-container {
+  background-color: rgba(0,0,0,0);
+}
+.ng-hide-remove.ng-hide-remove-active.cart-container {
+  background-color: rgba(0,0,0,0.6);
 }
