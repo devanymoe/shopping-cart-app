@@ -7,14 +7,16 @@
       </select>
     </div>
     <div class="col-md-2">
-      <select class="form-control">
-        <option disabled selected>Sort by Price</option>
+      <select class="form-control" ng-model="ctrl.priceFilter">
+        <option value="">Sort by Price</option>
+        <option value="+price">Low to High</option>
+        <option value="-price">High to Low</option>
       </select>
     </div>
     <div class="col-md-7"></div>
   </div>
   <div class="row">
-    <div class="product-container" ng-repeat="product in ctrl.allProducts | filter: {name: ctrl.service.searchTerm, categories: ctrl.categoryFilter} | orderBy: 'name'">
+    <div class="product-container" ng-repeat="product in ctrl.allProducts | filter: {name: ctrl.service.searchTerm, categories: ctrl.categoryFilter} | orderBy: [ctrl.priceFilter, 'name']">
       <div class="col-md-3">
         <dm-product product-data="product"></dm-product>
       </div>

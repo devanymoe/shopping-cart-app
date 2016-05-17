@@ -11,6 +11,7 @@ function ShopController($route, StoreServices) {
   this.categoryFilter = '';
   this.allProducts = StoreServices.returnProducts();
   this.allCategories = StoreServices.returnCategories(this.allProducts);
+  this.priceFilter = '';
 
   this.getStars = function(num) {
     return new Array(num);
